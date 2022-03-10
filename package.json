@@ -2,7 +2,7 @@
   "name": "cotacoes",
   "version": "1.0.0",
   "description": "Cotações dos ativos da B3",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rodrigodesoto/B3#readme",
   "dependencies": {
-    "cotacoes-bovespa": "^1.0.3"
+    "cotacoes-bovespa": "^1.0.3",
+    "express": "^4.17.3"
   }
 }
