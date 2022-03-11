@@ -18,6 +18,7 @@
   "homepage": "https://github.com/rodrigodesoto/B3#readme",
   "dependencies": {
     "cotacoes-bovespa": "^1.0.3",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.2.5"
   }
 }

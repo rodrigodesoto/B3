@@ -2,31 +2,36 @@ const express = require('express');
 const app = express();
 const indexRoute  = require('./Routes/index');
 const usersRoute = require('./Routes/users')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+
+const url = 'mongodb://127.0.0.1:27017/AIRES_INTEGRACOES_LOCAL';
+const options = {useNewUrlParser: true};
+
+mongoose.connect(url, options);
+// mongoose.set('useCreateIndex', true);
+
+mongoose.connection.on('error', (err) => {
+    console.log('Erro na conexão com o Banco de Dados: '+err);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.log('Aplicação desconectada do Banco de Dados');
+});
+
+mongoose.connection.on('connected', () => {
+    console.log('Aplicação conectada ao Banco de Dados!');
+})
+
+
+//BODY-PARSER
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use('/', indexRoute);
 app.use('/users', usersRoute);
 
-// app.get('/cotacao', (req, res) => {
-//     let obj = req.query;
-//     return res.send({message: `Ação código: ${obj.codAcao}`});
-// })
-
-// app.post('/', (req, res) => {
-//     return res.send({message: 'Tudo ok com post!'});
-// })
-
 app.listen(3000);
 
 module.exports = app;
-/* var http = require('http');
-var port = process.env.PORT || 1337;
-var cotacoesBovespa = require('cotacoes-bovespa');
 
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-
-    cotacoesBovespa.getCurrentQuote('VIVT3', function (err, quote) {
-        console.log(quote.price);
-        res.end('VIVT3: '+quote.price);
-    });
-}).listen(port); */
