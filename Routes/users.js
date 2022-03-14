@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const Users = require('../model/user');
 
 router.get('/', (req, res) => {
-    let obj = req.query;
-    return res.send({message: `Ação código: ${obj.codAcao} da rota de usuários`});
+    Users.find({}, (err, data) => {
+        if (err) return res.send({ error: 'Erro na consulta de usuários'});
+        return res.send(data);
+    })
 });
 
 router.post('/', (req, res) => {
