@@ -5,7 +5,7 @@ const usersRoute = require('./Routes/users')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-const url = 'mongodb://127.0.0.1:27017/AIRES_INTEGRACOES_LOCAL';
+const url = 'mongodb://127.0.0.1:27017/B3';
 const options = {useNewUrlParser: true};
 
 mongoose.connect(url, options);
