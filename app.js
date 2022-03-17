@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const indexRoute  = require('./Routes/index');
-const usersRoute = require('./Routes/users')
+const indexRoute  = require('./src/Routes/index');
+const usersRoute = require('./src/Routes/users')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 

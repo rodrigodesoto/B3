@@ -4,7 +4,8 @@
   "description": "Cotações dos ativos da B3",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "bcrypt": "^5.0.1",
     "cotacoes-bovespa": "^1.0.3",
     "express": "^4.17.3",
-    "mongoose": "^6.2.5"
+    "mongoose": "^6.2.5",
+    "nodemon": "^2.0.15"
   }
 }
