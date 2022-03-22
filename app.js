@@ -4,9 +4,11 @@ const indexRoute  = require('./src/Routes/index');
 const usersRoute = require('./src/Routes/users')
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
-const url = 'mongodb://127.0.0.1:27017/B3';
+const config = require('./src/config/config');
+const url = config.bd_string;
 const options = {useNewUrlParser: true};
+require('dotenv').config()
+const port =process.env.PORT;
 
 mongoose.connect(url, options);
 // mongoose.set('useCreateIndex', true);
@@ -31,7 +33,9 @@ app.use(bodyParser.json());
 app.use('/', indexRoute);
 app.use('/users', usersRoute);
 
-app.listen(3000);
+app.listen(port, () => {
+    console.info(`Porta: ${port}`);
+});
 
 module.exports = app;
 
