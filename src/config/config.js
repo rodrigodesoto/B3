@@ -5,20 +5,20 @@ const config = () => {
     switch(env){
         case 'dev':
             return{
-                bd_string: 'mongodb://127.0.0.1:27017/B3',
-                jwt_pass: 'batata',
+                bd_string: process.env.bd_string,
+                jwt_pass: process.env.jwt_pass,
                 jwt_expires_in: '7d'
             }
         case 'hml':
             return{
-                bd_string: 'mongodb://127.0.0.1:27017/B3',
-                jwt_pass: 'batata',
+                bd_string: process.env.bd_string,
+                jwt_pass: process.env.jwt_pass,
                 jwt_expires_in: '7d'
             }
         case 'prd':
             return{
-                bd_string: 'mongodb://127.0.0.1:27017/B3',
-                jwt_pass: 'batata',
+                bd_string: process.env.bd_string,
+                jwt_pass: process.env.jwt_pass,
                 jwt_expires_in: '7d'
             }
     }
