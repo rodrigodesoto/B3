@@ -11,11 +11,11 @@ const CarteiraSchema = new Schema({
     var12m: { type: Number, required: false},
     qtd: { type: Number, required: true},
     vlrInvest: { type: Number, required: false},
-    vlrAtual: { type: Number, required: false},
+    vlrTotal: { type: Number, required: false},
     vlrLucro: { type: Number, required: false},
     prcLucro: { type: Number, required: false},
     dtAtual: { type: Date, default: Date.now}
 });
 
 
-module.exports = mongoose.model('User', CarteiraSchema);
+module.exports = mongoose.model('Carteira', CarteiraSchema);

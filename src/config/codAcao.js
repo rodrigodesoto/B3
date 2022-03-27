@@ -1,4 +1,4 @@
-export const  codAcaoEnum = Object.freeze({
+const codAcaoEnum = Object.freeze({
         ARZZ3 : 'AREZZO CO ON NM',
         B3SA3 : 'B3 ON',
         BBAS3 : 'BANCO DO BRASIL',
@@ -30,3 +30,5 @@ export const  codAcaoEnum = Object.freeze({
         VIVT3 : 'TELEF BRASIL',
         WEGE3 : 'WEG SA'
 });
+
+module.exports = codAcaoEnum;

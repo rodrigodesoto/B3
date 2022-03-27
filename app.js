@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const indexRoute  = require('./src/Routes/index');
 const usersRoute = require('./src/Routes/users')
+const cotacoesRoute = require('./src/Routes/acoesCarteira') 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const config = require('./src/config/config');
@@ -32,6 +33,7 @@ app.use(bodyParser.json());
 
 app.use('/', indexRoute);
 app.use('/users', usersRoute);
+app.use('/cotacoes', cotacoesRoute);
 
 app.listen(port, () => {
     console.info(`Porta: ${port}`);
