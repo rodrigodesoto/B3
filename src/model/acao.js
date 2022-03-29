@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 
-const CarteiraSchema = new Schema({
+const AcaoSchema = new Schema({
     codAcao: { type: String, required: true, unique: true, upercase: true },
     vlrAtual: { type: Number, required: true},
     vlrCompra: { type: Number, required: true},
@@ -18,4 +18,4 @@ const CarteiraSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Carteira', CarteiraSchema);
+module.exports = mongoose.model('Acoes', AcaoSchema);
