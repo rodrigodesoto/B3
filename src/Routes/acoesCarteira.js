@@ -4,6 +4,7 @@ const auth = require('../middlewares/auth');
 const Acao = require('../model/acao');
 const codAcaoEnum = require('../config/codAcao');
 var cotacoesBovespa = require('cotacoes-bovespa');
+const moment = require("moment");
 
 router.get('/carteira', auth, (req, res) => {
     console.log(res.locals.auth_data);
@@ -49,11 +50,36 @@ async function salvarAcao(codAcao){
         });
     });
     return ret;
-//     var yesterday = new Date('2022-03-24');
-//     var agora = new Date('2022-03-25');
-//   await cotacoesBovespa.getHistoricalData(codAcao, yesterday, agora, function (err, quotes) {
-//         console.log(quotes);
-//     });
 }
+
+router.get('/acao', auth, async (req, res) => {
+    // let obj = req.body;
+    //     var dateInicial = new Date(moment(obj.dataCotacaoIni, 'DD/MM/YYYY').format('YYYY-MM-DD  00:01:00'));
+    //     var dateFinal = new Date(moment(obj.dataCotacaoFim, 'DD/MM/YYYY').format('YYYY-MM-DD  23:59:00'));
+    //     var dateIni = dateInicial.setDate(dateInicial.getDate());
+    //     var dateFin = dateFinal.setDate(dateFinal.getDate());
+    //     await cotacoesBovespa.getHistorical(`${obj.codAcao}`, dateIni, dateFin, function (err, quotes) {
+    //         console.log(quotes);
+    //         return res.status(200).send(quotes);
+    //     });
+        // cotacoesBovespa.getHistoricalData(`${obj.codAcao}`, function (err, quotes) {
+        //     console.log(quotes);
+        // });    
+        function primeiraFuncao() {
+            console.log("Esperou isso")
+        }
+        
+        function segundaFuncao() {
+        
+            console.log("Iniciou")
+        
+            primeiraFuncao()
+          
+          console.log("Agora executou isso!")
+        
+        }
+        
+        segundaFuncao()
+});
 
 module.exports = router;
